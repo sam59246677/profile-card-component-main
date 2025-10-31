@@ -1,0 +1,34 @@
+/* config.css — tokens, resets, and global feature detection */
+
+/* Set root font-size so 1rem = 10px for easy mental math */
+html { font-size: 62.5%; /* 62.5% of 16px = 10px */ }
+
+:root {
+  /* typographic scale */
+  --fs-xs: 1.2rem;   /* 12px */
+  --fs-sm: 1.4rem;   /* 14px */
+  --fs-md: 1.8rem;   /* 18px (body) */
+  --fs-lg: 2.4rem;   /* 24px */
+  --fs-xl: 3.2rem;   /* 32px */
+
+  /* Colors — using design tokens */
+  --clr-primary: hsl(185 75% 39%);
+  --clr-navy: hsl(229 23% 23%);
+  --clr-gray: hsl(227 10% 46%);
+  --bg: hsl(225 10% 92%);
+  --card-bg: hsl(0 0% 100%);
+
+    --bg-top: hsl(185 75% 39%); /* آبی کارت */
+  --bg-bottom: hsl(225 100% 98%); /* روشن */
+
+  /* spacing scale (use multiples of 0.4rem where needed) */
+  --space-xxs: .4rem; /* 4px */
+  --space-xs:  .8rem; /* 8px */
+  --space-sm:  1.2rem; /* 12px */
+  --space-md:  1.6rem; /* 16px */
+  --space-lg:  2.4rem; /* 24px */
+
+  --radius: 1.2rem;
+  --card-width: clamp(29rem, 40vw, 55rem); /* flexible card width */
+}
+

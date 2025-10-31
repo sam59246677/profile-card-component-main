@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Profile Card — Advanced</title>
+  <link rel="icon" href="./images/favicon-32x32.png" sizes="32x32" type="image/png">
+
+  <!-- Fonts (preconnect + link) -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Core styles (separated files) -->
+  <link rel="stylesheet" href="css/config.css">
+  <link rel="stylesheet" href="css/general.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+
+<body>
+  <main class="page">
+    <section class="profile-card-container">
+      
+      <!-- profile-card is the BEM block -->
+      <article class="profile-card  " aria-labelledby="profile-name">
+   
+
+        <header class="profile-card__header">
+          <!-- بک‌گراند آبی + pattern -->
+          <div class="profile-card__header-bg">
+            <img src="images/bg-pattern-card.svg" alt="" class="profile-card__bg-pattern">
+          </div>
+
+          <!-- عکس پروفایل و اطلاعات داخل figure -->
+          <figure class="profile-card__figure">
+            <picture>
+              <source srcset="images/image-victor.jpg" type="image/webp">
+              <img src="images/image-victor.jpg" alt="Victor Crest's portrait" width="120" height="120"
+                class="profile-card__avatar" loading="lazy">
+            </picture>
+
+            <!-- نام و سن زیر عکس -->
+            <figcaption class="profile-card__name">
+              Victor Crest <span class="profile-card__age">26</span>
+            </figcaption>
+
+            <!-- مکان -->
+            <figcaption class="profile-card__location">
+              <img src="images/icon-location.svg" alt="" class="profile-card__location-icon">
+              London
+            </figcaption>
+          </figure>
+        </header>
+
+
+        <footer class="profile-card__footer" aria-label="profile statistics">
+          <ul class="profile-card__stats" role="list">
+            <li class="profile-card__stat">
+              <span class="profile-card__stat-value">80K</span>
+              <span class="profile-card__stat-label">Followers</span>
+            </li>
+            <li class="profile-card__stat">
+              <span class="profile-card__stat-value">803K</span>
+              <span class="profile-card__stat-label">Likes</span>
+            </li>
+            <li class="profile-card__stat">
+              <span class="profile-card__stat-value">1.4K</span>
+              <span class="profile-card__stat-label">Photos</span>
+            </li>
+          </ul>
+        </footer>
+      </article>
+
+      <p class="attribution">Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          rel="noopener">Frontend Mentor</a>. Coded by <a href="#">Your Name</a>.</p>
+    </section>
+  </main>
+</body>
+
+</html>

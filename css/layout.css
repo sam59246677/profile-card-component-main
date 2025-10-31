@@ -1,0 +1,102 @@
+/* layout.css — positioning and responsive/container queries */
+
+/* Card container: we'll use container queries for modern browsers */
+.profile-card{ background: var(--card-bg); border-radius: var(--radius); box-shadow: 0 6px 30px rgba(39,53,69,0.08);
+  width: min(var(--card-width), 36rem);
+  padding: clamp(1.6rem, 2.5vw, 2.8rem);
+  display:block;
+  overflow: hidden;
+  color: var(--clr-navy);
+  /* enable container queries */
+  container-type: inline-size;
+  container-name: profile;
+
+
+
+    position: relative;
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: 0 6px 30px rgba(39, 53, 69, 0.08);
+  width: min(var(--card-width), 36rem);
+  padding: clamp(1.6rem, 2.5vw, 2.8rem);
+
+  overflow: hidden;
+  color: var(--clr-navy);
+
+
+  /* 👇 بک‌گراند ترکیبی: نصف بالا تصویر، نصف پایین سفید */
+  background-image: url('../images/bg-pattern-card.svg');
+  background-repeat: no-repeat;
+  background-size: 100% 39%;  /* فقط نصف کارت را پر کند */
+  background-position: top; 
+
+  
+  
+}
+
+.profile-card__header{ display:flex; gap: var(--space-md); align-items:center; }
+.profile-card__figure{ margin:0; display:flex; flex-direction:column; align-items:center; gap: .6rem; }
+.profile-card__location{ font-size: var(--fs-sm); color:var(--clr-gray); }
+
+.profile-card__meta{ display:flex; flex-direction:column; gap: .4rem; }
+.profile-card__name{ margin:0; font-size: var(--fs-xl); }
+.profile-card__age{ font-weight:400; color:var(--clr-gray); font-size: var(--fs-sm); margin-left: .8rem; }
+
+.profile-card__footer{ margin-top: var(--space-md); 
+  margin-top: var(--space-md);
+  border-top: 1px solid hsl(0 0% 90% / 1); /* 👈 خط جداکننده */
+  padding-top: var(--space-md);
+  margin-top: var(--space-md);
+  border-top: 1px solid hsl(0 0% 90%);
+  padding-top: var(--space-md);
+  width: calc(100% + 2 * clamp(1.6rem, 2.5vw, 2.8rem)); /* 👈 جبران padding کارت */
+  margin-left: calc(-1 * clamp(1.6rem, 2.5vw, 2.8rem));  /* 👈 بیرون کشیدن از چپ */
+  margin-right: calc(-1 * clamp(1.6rem, 2.5vw, 2.8rem)); /* 👈 بیرون کشیدن از راست */
+}
+.profile-card__stats{ list-style:none; padding:0; margin:0; display:flex; gap: 1.6rem; justify-content:space-between; }
+.profile-card__stat{ display:flex; flex-direction:column; align-items:center; min-width:6rem; }
+
+/* Container query: change layout when card is wide enough */
+@supports (container-type: inline-size) {
+  @container profile (min-width: 45rem) {
+    .profile-card{ display:grid; grid-template-columns: 1fr 1fr; align-items:center; gap: var(--space-lg); }
+    .profile-card__footer{ grid-column: span 2; }
+    .profile-card__header{ align-items:flex-start; }
+    .profile-card__stats{ justify-content: space-around; }
+  }
+}
+
+/* Fallback for browsers without container queries */
+@supports not (container-type: inline-size) {
+  @media (min-width: 900px) {
+    .profile-card{ display:grid; grid-template-columns: 1fr 1fr; align-items:center; gap: var(--space-lg); }
+    .profile-card__footer{ grid-column: span 2; }
+  }
+}
+
+/* Make stats wrap on small widths but keep spacing */
+@media (max-width: 420px){
+  .profile-card{ padding: 1.2rem; }
+  .profile-card__stats{ gap: .8rem; }
+}
+
+/* Provide a dark-mode friendly override using prefers-color-scheme */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: hsl(230 12% 8%);
+    --card-bg: hsl(229 23% 15%);
+    --clr-gray: hsl(227 10% 64%);
+  }
+}
+
+/* Feature detection: container queries availability */
+@supports not (container-type: inline-size) {
+  /* no container queries — we'll fall back to media queries in layout.css */
+}
+
+
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
