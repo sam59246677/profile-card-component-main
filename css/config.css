@@ -17,8 +17,7 @@ html { font-size: 62.5%; /* 62.5% of 16px = 10px */ }
   --clr-gray: hsl(227 10% 46%);
   --bg: hsl(225 10% 92%);
   --card-bg: hsl(0 0% 100%);
-
-    --bg-top: hsl(185 75% 39%); /* آبی کارت */
+  --bg-top: hsl(185 75% 39%); /* آبی کارت */
   --bg-bottom: hsl(225 100% 98%); /* روشن */
 
   /* spacing scale (use multiples of 0.4rem where needed) */

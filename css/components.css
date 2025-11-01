@@ -7,12 +7,11 @@
   flex-direction: column;
   align-items: center;
   background-color:var(--card-bg);
-  border-radius: var(--radius) var(--radius) 0 0;
   overflow: hidden;
   width: 100%;
-      color: var(--clr-navy) !important;
+  color: var(--clr-navy) !important;
   padding-top: 4rem; /* فاصله بالا */
-}
+ }
 
 /* تصویر pattern */
 .profile-card__header-bg{
@@ -20,39 +19,23 @@
   top:0;
   left:0;
   right:0;
-  height: auto;
-  z-index: 0;
-
-
-
-
-
   height: 50%; /* 👈 نصف بالای کارت را بپوشان */
-  overflow: hidden;
-  z-index: 0;
-  border-radius: var(--radius) var(--radius) 0 0; /* لبه‌های بالا گرد بمانند */
 }
 .profile-card__bg-pattern{
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
-
-
-
-
-}
-
+ }
 /* figure و avatar */
 .profile-card__figure{
   position: relative;
-  z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.6rem;
   margin: 0;
-     color: var(--clr-navy) !important;
+  color: var(--clr-navy) !important;
 }
 
 .profile-card__avatar{
@@ -67,15 +50,13 @@
 .profile-card__name{
   font-size: var(--fs-xl);
   font-weight: 700;
-
-     color: var(--clr-navy) !important;
+  color: var(--clr-navy) !important;
 }
 .profile-card__age{
   font-weight: 400;
   font-size: var(--fs-sm);
   margin-left: 0.5rem;
-
-     color: var(--clr-navy) !important;
+  color: var(--clr-navy) !important;
 }
 
 /* مکان */
@@ -84,18 +65,8 @@
   align-items: center;
   gap: 0.4rem;
   font-size: var(--fs-sm);
- 
-     color: var(--clr-navy) !important;
+  color: var(--clr-navy) !important;
 }
-.profile-card__location-icon{
-  width: 1.2rem;
-  height: 1.2rem;
-}
-
-
-
-
-
 
 .profile-card{ transition: transform 300ms ease, box-shadow 300ms ease; }
 .profile-card:focus-within{ outline: 3px solid color-mix(in srgb, var(--clr-primary) 22%, white); outline-offset: 4px; }
@@ -123,3 +94,8 @@
 
 /* ensure image has fallback border for low-contrast backgrounds */
 .profile-card__avatar{ border: 4px solid color-mix(in srgb, var(--card-bg) 90%, black 8%); }
+@media(min-width:700px){
+  .profile-card{
+    background-size: 100% 14.23rem;
+  }
+}
